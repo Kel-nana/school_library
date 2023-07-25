@@ -96,6 +96,11 @@ To run the project, execute the ruby file with any code runner of your choice.
 
 > No future features for now.
 
+Add new students or teachers.
+Add new books.
+Save records of who borrowed a given book and when.
+Simple user interface
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
