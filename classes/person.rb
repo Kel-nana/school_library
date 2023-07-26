@@ -12,6 +12,9 @@ class Person < Nameable
   # The 'name' parameter has a default value of 'Unknown'.
   # The 'parent_permission' parameter uses keyword argument syntax and has default value of 'true'.
   def initialize(age, name = 'Unknown', parent_permission: true)
+    # Call 'super' to initialize the state of the parent class 'Nameable'.
+    super()
+
     # Generate a random number between 1 and 1000 and assign it to the instance variable '@id'.
     @id = rand(1..1000)
 
@@ -36,7 +39,6 @@ class Person < Nameable
     of_age? || @parent_permission
   end
 
-  
   # Define the 'correct_name' method as required by the 'Nameable' class.
   # This method returns the name of the person as their correct name.
   def correct_name

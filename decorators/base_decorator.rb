@@ -1,5 +1,5 @@
 # The following line imports the 'Nameable' class from the file 'nameable.rb'
-require_relative './nameable'
+require_relative 'nameable'
 
 # 'Decorator' class inherits from the 'Nameable' class
 class Decorator < Nameable

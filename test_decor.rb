@@ -1,7 +1,7 @@
 # The following lines import the necessary classes from their respective files.
-require_relative './classes/person'
-require_relative './decorators/capitalize_decorator'
-require_relative './decorators/trimmer_decorator'
+require_relative 'classes/person'
+require_relative 'decorators/capitalize_decorator'
+require_relative 'decorators/trimmer_decorator'
 
 # Create a new 'Person' object with age 22 and name 'maximilianus'
 person = Person.new(22, 'maximilianus')

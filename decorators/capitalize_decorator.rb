@@ -1,5 +1,5 @@
 # The following line imports the 'Decorator' class from the file 'base_decorator.rb'
-require_relative './base_decorator'
+require_relative 'base_decorator'
 
 # 'CapitalizeDecorator' class inherits from the 'Decorator' class
 class CapitalizeDecorator < Decorator
