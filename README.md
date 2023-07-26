@@ -1,5 +1,14 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+<img src="./Assets/Ruby_logo.svg.png" alt="logo" width="140"  height="auto" />
+
+  <h1><b> School Library</b></h3>
+
+  <p> School Library: It works as a tool for a library that keeps track of all the books as well as who borrows them. </p>
+
+</div>
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -24,7 +33,7 @@
 
 # 📖 School_library<a name="about-project"></a>
 
-**School_library** Simple School library built based on classes and OOP priciples.
+**School_library** Simple School library built based on classes, OOP priciples and design patterns in Ruby
 
 ## 🛠 Built With <a name="built-with"></a>
 
