@@ -20,5 +20,3 @@ capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 
 # Call the 'correct_name' method on the 'CapitalizedTrimmedPerson' object
 p capitalized_trimmed_person.correct_name
-
-p capitalized_trimmed_person.correct_name
