@@ -4,7 +4,7 @@ class Person < Nameable
   attr_reader :id
 
   # Create read and write attributes 'name' and 'age' using 'attr_accessor'.
-  attr_accessor :name, :age
+  attr_accessor :name, :age, :rentals
 
   # Constructor for the 'Person' class.
   def initialize(age, name = 'Unknown', parent_permission: true)
@@ -20,6 +20,9 @@ class Person < Nameable
 
     # Assign the 'parent_permission' parameter to the instance variable '@parent_permission'.
     @parent_permission = parent_permission
+    
+    # Create an empty list called 'rentals' to store information about books they rented.
+    @rentals = []
   end
 
   # Define a private method called 'of_age?'.
