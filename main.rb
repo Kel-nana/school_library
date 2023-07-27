@@ -1,6 +1,6 @@
 # Include the required files
-require_relative './app/app'
-require_relative './app/options'
+require_relative 'app/app'
+require_relative 'app/options'
 
 # The main function of the application.
 def main

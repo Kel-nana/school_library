@@ -11,9 +11,6 @@ class Student < Person
 
     # Assign the 'classroom' parameter to an instance variable '@classroom'.
     @classroom = classroom
-
-    # Also, we do something special when we create a new student.
-    classroom.add_student(self)
   end
 
   # Define a method called 'play_hooky'.
