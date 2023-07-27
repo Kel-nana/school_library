@@ -2,6 +2,7 @@ require_relative 'person'
 
 # Define a new class 'Student' that inherits from the 'Person' class.
 class Student < Person
+  attr_accessor :classroom
   # Constructor for the 'Student' class, taking four parameters: 'age', 'classroom', 'name', and 'parent_permission'.
   def initialize(age, classroom, name = 'Unknown', parent_permission: true)
     # Call the 'initialize' method of the superclass 'Person' using the 'super' keyword
@@ -9,6 +10,11 @@ class Student < Person
 
     # Assign the 'classroom' parameter to an instance variable '@classroom'.
     @classroom = classroom
+
+        # Also, we do something special when we create a new student.
+    # We tell the classroom, "Hey, there's a new student in your classroom!"
+    # And the classroom will remember that this student is part of it.
+    classroom.add_student(self)
   end
 
   # Define a method called 'play_hooky'.
