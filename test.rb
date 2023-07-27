@@ -26,12 +26,16 @@ capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 p capitalized_trimmed_person.correct_name
 
 # TESTING ASSOCIATIONS
-west = Classroom.new('west')
-p west.label
+east = Classroom.new('east')
+p east.label
 
-student1 = Student.new(22, west, 'kevin')
+student1 = Student.new(27, east, 'kelvin')
 p student1.classroom.label
 book1 = Book.new('Atomic Habits', 'James Clear')
 p book1.title
 rental1 = Rental.new('2020-03-01', book1, student1)
 p(rental1.book.rentals.map(&:date))
+p rental1.book.title
+p rental1.person.name
+p rental1.person.age
+p rental1.date
