@@ -9,8 +9,8 @@ class Rental
   def initialize(date, book, person)
     @date = date
     @book = book
-    book.rentals << self # Add this rental to the list of rentals associated with the book.
     @person = person
+    book.rentals << self # Add this rental to the list of rentals associated with the book.
     person.rentals << self # Add this rental to the list of rentals associated with the person.
   end
 end

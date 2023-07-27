@@ -39,6 +39,13 @@ class Person < Nameable
   def correct_name
     @name
   end
+
+  # Adds a new rental transaction to the list of rentals associated with the person.
+  # If a rental with the same date and book already exists in the rentals list, it avoids duplicates
+  def add_rentals(date, book)
+    @rentals.push(Rental.new(date, self, book)) unless @rentals.include?(Rental.new(date, self, book))
+  end
+
   # Make the 'of_age?' method private so that it can only be accessed within the 'Person' class.
   private :of_age?
 end
