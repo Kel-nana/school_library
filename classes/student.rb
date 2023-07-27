@@ -12,8 +12,6 @@ class Student < Person
     @classroom = classroom
 
         # Also, we do something special when we create a new student.
-    # We tell the classroom, "Hey, there's a new student in your classroom!"
-    # And the classroom will remember that this student is part of it.
     classroom.add_student(self)
   end
 

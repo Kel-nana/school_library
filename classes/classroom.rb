@@ -10,9 +10,6 @@ class Classroom
     end
   
     # Adds a student to the classroom and assigns the classroom to the student.
-    # If the student is already in the classroom, it won't be added again.
-    # Params:
-    # +student+:: An instance of the Student class to be added to the classroom.
     def add_student(student)
       @students.push(student) unless @students.include?(student) # Add the student if not already present.
       student.classroom = self # Assign the classroom to the student.
