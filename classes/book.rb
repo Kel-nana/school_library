@@ -12,8 +12,7 @@ class Book
   end
 
   # Adds a rental to the list of rentals associated with this book.
-  def add_rental(rental)
-    # @rentals.push(rental)
-    @rentals << rental unless @rentals.include?(rental)
+  def add_rental(date, person)
+    @rentals.push(Rental.new(date, self, person)) unless @rentals.include?(Rental.new(date, self, person))
   end
 end
