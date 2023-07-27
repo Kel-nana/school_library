@@ -12,4 +12,10 @@ class Book
     @author = author
     @rentals = [] # Initialize an empty array to store the rentals associated with this book.
   end
+
+  # Adds a rental to the list of rentals associated with this book.
+  def add_rental(rental)
+    @rentals.push(rental)
+    @rentals << rental
+  end
 end
