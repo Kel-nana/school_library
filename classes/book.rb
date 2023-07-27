@@ -14,6 +14,6 @@ class Book
   # Adds a rental to the list of rentals associated with this book.
   def add_rental(rental)
     # @rentals.push(rental)
-    @rentals << rental
+    @rentals << rental unless @rentals.include?(rental)
   end
 end
