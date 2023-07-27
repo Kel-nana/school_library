@@ -75,12 +75,13 @@ Clone this repository to your desired folder:
 
 ```sh
   git clone git@github.com:Kel-nana/school_library.git
-  cd enumerable
+  cd school_library
 ```
 
 ### Install
 
-No installation needed, unzip the repo and run the file content.
+bundle install
+ruby main.rb
 
 ### Usage
 
