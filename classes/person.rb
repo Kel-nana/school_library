@@ -20,7 +20,7 @@ class Person < Nameable
 
     # Assign the 'parent_permission' parameter to the instance variable '@parent_permission'.
     @parent_permission = parent_permission
-    
+
     # Create an empty list called 'rentals' to store information about books they rented.
     @rentals = []
   end
