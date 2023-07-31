@@ -99,6 +99,12 @@ To run the project, execute the ruby file with any code runner of your choice.
 - Linkedin: [@kelvin-irungu](https://www.linkedin.com/in/kelvin-irungu-838923249/)
 - Twitter: [@kelvin-irungu](https://twitter.com/home)
 
+**Mahamadou Nouridine**
+
+- GitHub: [mahamadou-nouridine](https://github.com/mahamadou-nouridine)
+- Linkedin: [mahamadou-nouridine](https://www.linkedin.com/in/mahamadou-nouridine)
+- Twitter: [Nouridine_Dino](https://twitter.com/Nouridine_Dino)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- FUTURE FEATURES -->
 
