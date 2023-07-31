@@ -3,6 +3,8 @@ require_relative 'person'
 
 # Define a new class 'Teacher' that inherits from the 'Person' class.
 class Teacher < Person
+  attr_reader :specialization
+
   # Constructor for the 'Teacher' class.
   def initialize(age, specialization, name = 'Unknown', parent_permission: true)
     # Call the 'initialize' method of the superclass 'Person' using the 'super' keyword.

@@ -27,10 +27,16 @@ class App
   def list_all_people
     # Display all people if available, otherwise show a message
     if @people.empty?
-      puts 'No person created'
+      puts 'No person created yet'
     else
       @people.each do |person|
-        puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        info = "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+        if person.is_a?(Teacher)
+          info += ", Specialization: #{person.specialization}"
+        elsif person.is_a?(Student)
+          info += ", Classroom: #{person.classroom}"
+        end
+        puts info
       end
     end
   end
