@@ -4,6 +4,7 @@ require_relative '../classes/student'
 require_relative '../classes/teacher'
 require_relative '../classes/book'
 require_relative '../classes/rental'
+require_relative 'user_input'
 
 class App
   attr_accessor :books, :people
@@ -13,38 +14,32 @@ class App
     @people = []
   end
 
+  # List all books in the library
   def list_all_books
-    # Display all books if available, otherwise show a message
     if @books.empty?
       puts 'No books available'
     else
-      @books.each do |book|
-        puts "Title: '#{book.title}', Author: #{book.author}"
-      end
+      @books.each { |book| puts "Title: '#{book.title}', Author: #{book.author}" }
     end
   end
 
+  # List all people (students and teachers) in the library
   def list_all_people
-    # Display all people if available, otherwise show a message
     if @people.empty?
       puts 'No person created yet'
     else
       @people.each do |person|
         info = "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-        if person.is_a?(Teacher)
-          info += ", Specialization: #{person.specialization}"
-        elsif person.is_a?(Student)
-          info += ", Classroom: #{person.classroom}"
-        end
+        info += ", Specialization: #{person.specialization}" if person.is_a?(Teacher)
+        info += ", Classroom: #{person.classroom}" if person.is_a?(Student)
         puts info
       end
     end
   end
 
+  # Prompt the user to create a person (student or teacher)
   def create_person
-    # Prompt user to create a student or teacher and call corresponding method
-    print 'Do you want to create a student(1) or a teacher(2)? [Input the number]:'
-    choice = gets.chomp.to_i
+    choice = get_user_input('Do you want to create a student(1) or a teacher(2)? [Input the number]:', :integer)
 
     case choice
     when 1
@@ -57,96 +52,78 @@ class App
     end
   end
 
+  # Prompt the user to create a student with required details and add to the people array
   def create_student
-    # Prompt user to create a student with required details and add to the people array
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Has parent permission? [Y/N]: '
-    parent_permission = gets.chomp
-    parent_permission = parent_permission.downcase != 'n'
-    print 'Classroom: '
-    classroom = gets.chomp
+    age = get_user_input('Age: ', :integer)
+    name = get_user_input('Name: ', :string)
+    parent_permission = get_user_input('Has parent permission? [Y/N]: ', :boolean)
+    classroom = get_user_input('Classroom: ', :string)
     student = Student.new(age, classroom, name, parent_permission: parent_permission)
     puts 'Person created successfully'
     @people << student
   end
 
+  # Prompt the user to create a teacher with required details and add to the people array
   def create_teacher
-    # Prompt user to create a teacher with required details and add to the people array
-    print 'Age: '
-    age = gets.chomp.to_i
-    print 'Name: '
-    name = gets.chomp
-    print 'Specialization: '
-    specialization = gets.chomp
+    age = get_user_input('Age: ', :integer)
+    name = get_user_input('Name: ', :string)
+    specialization = get_user_input('Specialization: ', :string)
     teacher = Teacher.new(age, specialization, name)
     puts 'Person created successfully'
     @people << teacher
   end
 
+  # Prompt the user to create a book with required details and add to the books array
   def create_book
-    # Prompt user to create a book with required details and add to the books array
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
+    title = get_user_input('Title: ', :string)
+    author = get_user_input('Author: ', :string)
     book = Book.new(title, author)
     puts 'Book created successfully'
     @books << book
   end
 
+  # Prompt the user to create a rental for a book and a person
   def create_rental
-    # Check if books and people exist, prompt user to select book and person, then create a rental
     if @books.empty?
       puts 'No books available to rent'
     else
-      puts 'Select a book from the following list by number'
       display_books
-
       if @people.empty?
         puts 'No persons created. Kindly create a person before renting'
       else
-        puts 'Select a person from the following list (not id)'
         display_people
-
-        print 'Date: '
-        date = gets.chomp
+        date = get_user_input('Date: ', :string)
         Rental.new(date, @selected_book, @selected_person)
         puts 'Rental created successfully'
       end
     end
   end
 
+  # Display all books with corresponding index and store user-selected book
   def display_books
-    # Display all books with corresponding index and store user-selected book
-    @books.each_with_index do |book, index|
-      puts "#{index}) Title: #{book.title}, Author: #{book.author}"
-    end
-    index = gets.chomp.to_i
+    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+    index = get_user_input('Select a book by number: ', :integer)
     @selected_book = @books[index]
   end
 
+  # Display all people with corresponding index and store user-selected person
   def display_people
-    # Display all people with corresponding index and store user-selected person
     @people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
-    index = gets.chomp.to_i
+    index = get_user_input('Select a person by number: ', :integer)
     @selected_person = @people[index]
   end
 
+  # List rentals for a specific person by their ID
   def list_rentals_of_person
-    # Prompt user for a person's ID and display their rentals if they exist
-    print 'ID of Person: '
-    id = gets.chomp.to_i
-    person_selected = @people.select { |person| person.id == id }.first
+    id = get_user_input('ID of Person: ', :integer)
+    person_selected = @people.find { |person| person.id == id }
     if person_selected.nil?
       puts 'No such person exists'
     else
       puts 'Rentals: '
-      person_selected.rentals.map do |rental|
+      person_selected.rentals.each do |rental|
         puts "Date: #{rental.date}, Book '#{rental.book.title}' by #{rental.book.author}"
       end
     end
