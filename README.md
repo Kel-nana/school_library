@@ -1,5 +1,14 @@
 <a name="readme-top"></a>
 
+<div align="center">
+
+<img src="./Assets/Ruby_logo.svg.png" alt="logo" width="140"  height="auto" />
+
+  <h1><b> School Library</b></h3>
+
+  <p> School Library: It works as a tool for a library that keeps track of all the books as well as who borrows them. </p>
+
+</div>
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
@@ -24,7 +33,7 @@
 
 # 📖 School_library<a name="about-project"></a>
 
-**School_library** Simple School library built based on classes and OOP priciples.
+**School_library** Simple School library built based on classes, OOP priciples and design patterns in Ruby
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -66,12 +75,13 @@ Clone this repository to your desired folder:
 
 ```sh
   git clone git@github.com:Kel-nana/school_library.git
-  cd enumerable
+  cd school_library
 ```
 
 ### Install
 
-No installation needed, unzip the repo and run the file content.
+bundle install
+ruby main.rb
 
 ### Usage
 
@@ -89,12 +99,23 @@ To run the project, execute the ruby file with any code runner of your choice.
 - Linkedin: [@kelvin-irungu](https://www.linkedin.com/in/kelvin-irungu-838923249/)
 - Twitter: [@kelvin-irungu](https://twitter.com/home)
 
+**Mahamadou Nouridine**
+
+- GitHub: [mahamadou-nouridine](https://github.com/mahamadou-nouridine)
+- Linkedin: [mahamadou-nouridine](https://www.linkedin.com/in/mahamadou-nouridine)
+- Twitter: [Nouridine_Dino](https://twitter.com/Nouridine_Dino)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
 > No future features for now.
+
+Add new students or teachers.
+Add new books.
+Save records of who borrowed a given book and when.
+Simple user interface
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
