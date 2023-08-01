@@ -101,16 +101,14 @@ class App
 
   # Display all books with corresponding index and store user-selected book
   def display_books
-    @books.each_with_index { |book, index| puts "#{index}) Title: #{book.title}, Author: #{book.author}" }
+    list_all_books
     index = get_user_input('Select a book by number: ', :integer)
     @selected_book = @books[index]
   end
 
   # Display all people with corresponding index and store user-selected person
   def display_people
-    @people.each_with_index do |person, index|
-      puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
+    list_all_people
     index = get_user_input('Select a person by number: ', :integer)
     @selected_person = @people[index]
   end
