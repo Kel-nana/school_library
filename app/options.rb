@@ -9,7 +9,7 @@ def options(app)
     4 => :create_book,
     5 => :create_rental,
     6 => :list_rentals_of_person,
-    7 => :exit_app,
+    7 => :exit_app
   }
 
   loop do
