@@ -8,7 +8,9 @@ def options(app)
     4 => :create_book,
     5 => :create_rental,
     6 => :list_rentals_of_person,
-    7 => :exit_app
+    7 => :save_data_option,  # Add the option to save data
+    8 => :load_data_option,  # Add the option to load data
+    9 => :exit_app
   }
 
   loop do
@@ -18,8 +20,15 @@ def options(app)
     number = gets.chomp.to_i
 
     if menu_options.key?(number)
-      # Call the corresponding method based on the user's input
       send(menu_options[number], app)
+      if number == 7
+        app.save_data
+        puts 'Data saved successfully!'
+      elsif number == 8
+        app.load_data
+        puts 'Data loaded successfully!'
+        
+      end
     else
       puts 'Invalid option. Please try again.'
     end
@@ -56,6 +65,16 @@ end
 # Prompt user to enter a person's ID and display their rentals in the app instance.
 def list_rentals_of_person(app)
   app.list_rentals_of_person
+end
+
+# Add a new method to handle the "Save Data" option
+def save_data_option(app)
+  app.save_data
+end
+
+# Add a new method to handle the "Load Data" option
+def load_data_option(app)
+  app.load_data
 end
 
 # Exit the application with a farewell message.
