@@ -32,28 +32,27 @@ class Rental
 
   def self.from_json(json_data, books, people)
     rental_data = JSON.parse(json_data)
-  
+
     # Access the keys directly from the rental_data hash
     book = find_book_by_title(rental_data['book']['title'], books)
     person = find_person_by_id(rental_data['person']['id'], people)
-  
+
     Rental.new(rental_data['date'], book, person)
   end
 
   def load_rentals
     return unless File.exist?('data/rental.json') && !File.empty?('data/rental.json')
-  
+
     json_data = File.read('data/rental.json')
     parsed_data = JSON.parse(json_data)
-  
+
     # Ensure parsed_data is an array before processing
     parsed_data = [] unless parsed_data.is_a?(Array)
-  
+
     @rentals = parsed_data.map do |rental_data|
       Rental.from_json(rental_data, @books, @people)
     end
   end
-  
 
   def self.find_book_by_title(title, books)
     books.find { |book| book.title == title }

@@ -1,6 +1,6 @@
 # Define a new class 'Teacher' that inherits from the 'Person' class.
 class Teacher < Person
-  attr_accessor :specialization, :id  # Add ':id' to make it accessible and settable.
+  attr_accessor :specialization, :id # Add ':id' to make it accessible and settable.
 
   # Constructor for the 'Teacher' class.
   def initialize(age, specialization, name = 'Unknown', parent_permission: true)
@@ -24,7 +24,6 @@ class Teacher < Person
     teacher
   end
 
-  
   def to_json(*args)
     {
       'type' => self.class.name,
@@ -34,5 +33,4 @@ class Teacher < Person
       'specialization' => @specialization
     }.to_json(*args)
   end
-
 end

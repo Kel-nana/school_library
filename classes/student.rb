@@ -18,7 +18,8 @@ class Student < Person
 
   def self.from_json(json_data)
     parsed_data = JSON.parse(json_data)
-    student = new(parsed_data['age'], parsed_data['classroom'], parsed_data['name'], parent_permission: parsed_data['parent_permission'])
+    student = new(parsed_data['age'], parsed_data['classroom'], parsed_data['name'],
+                  parent_permission: parsed_data['parent_permission'])
     student.id = parsed_data['id'].to_i
     student
   end

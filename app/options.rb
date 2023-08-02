@@ -8,8 +8,8 @@ def options(app)
     4 => :create_book,
     5 => :create_rental,
     6 => :list_rentals_of_person,
-    7 => :save_data_option,  # Add the option to save data
-    8 => :load_data_option,  # Add the option to load data
+    7 => :save_data_option, # Add the option to save data
+    8 => :load_data_option, # Add the option to load data
     9 => :exit_app
   }
 
@@ -27,7 +27,7 @@ def options(app)
       elsif number == 8
         app.load_data
         puts 'Data loaded successfully!'
-        
+
       end
     else
       puts 'Invalid option. Please try again.'
