@@ -51,4 +51,16 @@ class Person < Nameable
   def rental_exists?(date, book)
     @rentals.any? { |rental| rental.date == date && rental.book == book }
   end
+  def to_json(*args)
+    {
+      'type' => self.class.name,
+      'id' => @id,
+      'age' => @age,
+      'name' => @name,
+      'parent_permission' => @parent_permission,
+      'rentals' => @rentals.map(&:to_json) # Add this line to include rentals data in the JSON representation.
+    }.to_json(*args)
+  end
+
+  
 end
