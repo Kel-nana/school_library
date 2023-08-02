@@ -1,6 +1,7 @@
 # A method to display the options menu and handle user inputs.
 # The 'app' parameter represents the current instance of the App class.
 def options(app)
+  app.load_data
   menu_options = {
     1 => :list_all_books,
     2 => :list_all_people,
@@ -8,9 +9,7 @@ def options(app)
     4 => :create_book,
     5 => :create_rental,
     6 => :list_rentals_of_person,
-    7 => :save_data_option, # Add the option to save data
-    8 => :load_data_option, # Add the option to load data
-    9 => :exit_app
+    7 => :exit_app,
   }
 
   loop do
@@ -21,14 +20,10 @@ def options(app)
 
     if menu_options.key?(number)
       send(menu_options[number], app)
-      if number == 7
-        app.save_data
-        puts 'Data saved successfully!'
-      elsif number == 8
-        app.load_data
-        puts 'Data loaded successfully!'
-
-      end
+      # if number == 7
+      #   app.save_data
+      #   puts 'You made a good choice'
+      # end
     else
       puts 'Invalid option. Please try again.'
     end
@@ -78,7 +73,8 @@ def load_data_option(app)
 end
 
 # Exit the application with a farewell message.
-def exit_app(_)
+def exit_app(app)
+  app.save_data
   puts 'Thank you for using this app!'
   exit
 end

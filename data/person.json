@@ -1,3 +1,4 @@
 [
-  "{\"type\":\"Student\",\"id\":112,\"age\":55,\"name\":\"ttyfyt\",\"parent_permission\":false,\"classroom\":\"byg\"}"
+  "{\"type\":\"Student\",\"id\":112,\"age\":55,\"name\":\"ttyfyt\",\"parent_permission\":false,\"classroom\":\"byg\"}",
+  "{\"type\":\"Teacher\",\"id\":388,\"age\":23,\"name\":\"Mahamadou\",\"specialization\":\"Maths\"}"
 ]
