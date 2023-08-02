@@ -1,9 +1,6 @@
-# Import the 'Person' class from the 'person.rb' file using 'require_relative'.
-require_relative 'person'
-
 # Define a new class 'Teacher' that inherits from the 'Person' class.
 class Teacher < Person
-  attr_reader :specialization
+  attr_accessor :specialization, :id  # Add ':id' to make it accessible and settable.
 
   # Constructor for the 'Teacher' class.
   def initialize(age, specialization, name = 'Unknown', parent_permission: true)
@@ -19,4 +16,23 @@ class Teacher < Person
   def can_use_services?
     true
   end
+
+  def self.from_json(json_data)
+    parsed_data = JSON.parse(json_data)
+    teacher = new(parsed_data['age'], parsed_data['specialization'], parsed_data['name'])
+    teacher.id = parsed_data['id'].to_i
+    teacher
+  end
+
+  
+  def to_json(*args)
+    {
+      'type' => self.class.name,
+      'id' => @id,
+      'age' => @age,
+      'name' => @name,
+      'specialization' => @specialization
+    }.to_json(*args)
+  end
+
 end
