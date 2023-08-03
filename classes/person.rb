@@ -1,11 +1,8 @@
-# Import the 'Nameable' decorator from the specified path.
 require_relative '../decorators/nameable'
-
 # Define the 'Person' class, which extends the 'Nameable' class.
 class Person < Nameable
   # Create a read-only attribute 'id' using 'attr_reader'.
   attr_reader :id
-
   # Create read and write attributes 'name' and 'age' using 'attr_accessor'.
   attr_accessor :name, :age, :rentals
 
@@ -14,14 +11,11 @@ class Person < Nameable
     # Generate a random number between 1 and 1000 and assign it to the instance variable '@id'.
     super()
     @id = rand(1..1000)
-
     # Assign the 'name' and 'age' parameters to their respective instance variables '@name' and '@age'.
     @name = name
     @age = age
-
     # Assign the 'parent_permission' parameter to the instance variable '@parent_permission'.
     @parent_permission = parent_permission
-
     # Create an empty list called 'rentals' to store information about books they rented.
     @rentals = []
   end
@@ -50,5 +44,15 @@ class Person < Nameable
   # This method is used to avoid adding duplicate rentals to the 'rentals' list.
   def rental_exists?(date, book)
     @rentals.any? { |rental| rental.date == date && rental.book == book }
+  end
+
+  def to_json(*args)
+    {
+      'type' => self.class.name,
+      'id' => @id,
+      'age' => @age,
+      'name' => @name,
+      'parent_permission' => @parent_permission
+    }.to_json(*args)
   end
 end

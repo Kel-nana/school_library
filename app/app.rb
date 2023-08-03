@@ -5,13 +5,19 @@ require_relative '../classes/teacher'
 require_relative '../classes/book'
 require_relative '../classes/rental'
 require_relative 'user_input'
+require_relative '../data/load_data'
+require_relative '../data/save_data'
+require 'json'
 
 class App
-  attr_accessor :books, :people
+  include LoadData
+  include SaveData
+  attr_accessor :books, :people, :rentals
 
   def initialize
     @books = []
     @people = []
+    @rentals = []
   end
 
   # List all books in the library
@@ -93,7 +99,8 @@ class App
       else
         display_people
         date = get_user_input('Date: ', :string)
-        Rental.new(date, @selected_book, @selected_person)
+        rental = Rental.new(date, @selected_book, @selected_person) # Create the Rental object
+        @rentals << rental # Add the rental to the @rentals array
         puts 'Rental created successfully'
       end
     end
@@ -125,5 +132,10 @@ class App
         puts "Date: #{rental.date}, Book '#{rental.book.title}' by #{rental.book.author}"
       end
     end
+  end
+
+  def save_and_load_data
+    save_data
+    load_data
   end
 end

@@ -1,0 +1,17 @@
+[
+  {
+    "date": "today",
+    "book": "{\"title\":\"atomic habits\",\"author\":\"rrr\"}",
+    "person": "{\"type\":\"Student\",\"id\":112,\"age\":55,\"name\":\"ttyfyt\",\"parent_permission\":false,\"classroom\":\"byg\"}"
+  },
+  {
+    "date": "today",
+    "book": "{\"title\":\"Nothing\",\"author\":\"Nothing\"}",
+    "person": "{\"type\":\"Teacher\",\"id\":388,\"age\":23,\"name\":\"Mahamadou\",\"specialization\":\"Maths\"}"
+  },
+  {
+    "date": "today",
+    "book": "{\"title\":\"no title\",\"author\":\"no author\"}",
+    "person": "{\"type\":\"Teacher\",\"id\":681,\"age\":23,\"name\":\"Nouridine\",\"specialization\":\"Computer\"}"
+  }
+]

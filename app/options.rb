@@ -1,6 +1,7 @@
 # A method to display the options menu and handle user inputs.
 # The 'app' parameter represents the current instance of the App class.
 def options(app)
+  app.load_data
   menu_options = {
     1 => :list_all_books,
     2 => :list_all_people,
@@ -18,8 +19,11 @@ def options(app)
     number = gets.chomp.to_i
 
     if menu_options.key?(number)
-      # Call the corresponding method based on the user's input
       send(menu_options[number], app)
+      # if number == 7
+      #   app.save_data
+      #   puts 'You made a good choice'
+      # end
     else
       puts 'Invalid option. Please try again.'
     end
@@ -58,8 +62,19 @@ def list_rentals_of_person(app)
   app.list_rentals_of_person
 end
 
+# Add a new method to handle the "Save Data" option
+def save_data_option(app)
+  app.save_data
+end
+
+# Add a new method to handle the "Load Data" option
+def load_data_option(app)
+  app.load_data
+end
+
 # Exit the application with a farewell message.
-def exit_app(_)
+def exit_app(app)
+  app.save_data
   puts 'Thank you for using this app!'
   exit
 end
