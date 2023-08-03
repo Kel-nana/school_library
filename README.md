@@ -87,6 +87,12 @@ ruby main.rb
 
 To run the project, execute the ruby file with any code runner of your choice.
 
+- ruby main.rb
+
+To run tests navigate to Rspec/spec folder then execute the following command:
+
+- Rspec spec Rspec/spec/
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
