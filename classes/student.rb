@@ -1,9 +1,10 @@
+require_relative 'person'
 # Define a new class 'Student' that inherits from the 'Person' class.
 class Student < Person
   attr_accessor :classroom, :id, :parent_permission # Add ':id' to make it accessible and settable.
 
   # Constructor for the 'Student' class, taking four parameters: 'age', 'classroom', 'name', and 'parent_permission'.
-  def initialize(age, classroom, name = 'Unknown', parent_permission: true)
+  def initialize(age, classroom, name , parent_permission: true)
     # Call the 'initialize' method of the superclass 'Person' using the 'super' keyword
     super(age, name, parent_permission: parent_permission)
 

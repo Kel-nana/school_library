@@ -1,3 +1,4 @@
+require_relative 'person'
 # Define a new class 'Teacher' that inherits from the 'Person' class.
 class Teacher < Person
   attr_accessor :specialization, :id # Add ':id' to make it accessible and settable.

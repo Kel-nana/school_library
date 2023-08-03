@@ -44,7 +44,6 @@ class Person < Nameable
     @rentals.push(Rental.new(date, self, book)) unless rental_exists?(date, book)
   end
 
-  private
 
   # Define a private method called 'rental_exists?' to check if a rental with the given date and book already exists.
   # This method is used to avoid adding duplicate rentals to the 'rentals' list.
@@ -59,7 +58,6 @@ class Person < Nameable
       'age' => @age,
       'name' => @name,
       'parent_permission' => @parent_permission,
-      'rentals' => @rentals.map(&:to_json) # Add this line to include rentals data in the JSON representation.
     }.to_json(*args)
   end
 end
