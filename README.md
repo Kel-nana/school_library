@@ -52,7 +52,7 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Module definition and use**
+- **Class Inheritance and Polymorphism**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,13 +108,14 @@ To run the project, execute the ruby file with any code runner of your choice.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 <!-- FUTURE FEATURES -->
 
-## 🔭 Future Features <a name="future-features"></a>
-
-> No future features for now.
+## 🔭 Future Features <a name="future-features"></a
 
 Add new students or teachers.
+
 Add new books.
+
 Save records of who borrowed a given book and when.
+
 Simple user interface
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
