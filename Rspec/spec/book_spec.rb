@@ -1,6 +1,7 @@
 require 'json'
 require 'rspec'
 require_relative '../../classes/book'
+require_relative '../../classes/teacher.rb'
 describe Book do
   let(:title) { 'Atomic Habit' }
   let(:author) { 'Kel-nana' }
@@ -34,6 +35,14 @@ describe Book do
       expect(new_book).to be_an_instance_of(Book)
       expect(new_book.title).to eq(title)
       expect(new_book.author).to eq(author)
+    end
+  end
+
+  describe 'add_rental' do
+    it 'Add rentals in the book rentals array' do
+      teacher = Teacher.new(24, "Math")
+      book.add_rental('22/09/2023', teacher)
+      expect(book.rentals.length).to eq(1)
     end
   end
 end

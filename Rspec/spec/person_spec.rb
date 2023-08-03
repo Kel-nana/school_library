@@ -1,6 +1,7 @@
 require 'json'
 require 'rspec'
 require_relative '../../classes/person'
+require_relative '../../classes/book.rb'
 describe Person do
   let(:age) { 20 }
   let(:name) { 'John Doe' }
@@ -48,6 +49,14 @@ describe Person do
         'parent_permission' => parent_permission
       }.to_json
       expect(person.to_json).to eq(expected_json)
+    end
+  end
+
+  describe 'add_rental' do
+    it 'Add rentals in the person rentals array' do
+      book = Book.new("Fancy book", "Nice author")
+      person.add_rental('22/09/2023', book)
+      expect(person.rentals.length).to eq(2)
     end
   end
 end
