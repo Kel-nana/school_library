@@ -21,7 +21,13 @@ module SaveData
 
   def save_rentals
     File.open('data/rental.json', 'w') do |file|
-      json_data = JSON.pretty_generate(@rentals.map(&:to_json))
+      json_data = JSON.pretty_generate(@rentals.map do |rental|
+        {
+          'date' => rental.date,
+          'book' => rental.book.to_json,
+          'person' => rental.person.to_json
+        }
+      end)
       file.write(json_data)
     end
   end

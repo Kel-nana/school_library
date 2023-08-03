@@ -1,4 +1,5 @@
 [
   "{\"type\":\"Student\",\"id\":112,\"age\":55,\"name\":\"ttyfyt\",\"parent_permission\":false,\"classroom\":\"byg\"}",
-  "{\"type\":\"Teacher\",\"id\":388,\"age\":23,\"name\":\"Mahamadou\",\"specialization\":\"Maths\"}"
+  "{\"type\":\"Teacher\",\"id\":388,\"age\":23,\"name\":\"Mahamadou\",\"specialization\":\"Maths\"}",
+  "{\"type\":\"Student\",\"id\":34,\"age\":33,\"name\":\"rrr\",\"parent_permission\":true,\"classroom\":\"west\"}"
 ]
