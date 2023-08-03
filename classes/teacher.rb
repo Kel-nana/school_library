@@ -6,7 +6,7 @@ class Teacher < Person
   def initialize(age, specialization, name = 'Unknown', parent_permission: true)
     # Call the 'initialize' method of the superclass 'Person' using the 'super' keyword.
 
-    super(age, name, parent_permission:)
+    super(age, name, parent_permission: parent_permission)
 
     # Assign the 'specialization' parameter to an instance variable '@specialization'.
     @specialization = specialization
