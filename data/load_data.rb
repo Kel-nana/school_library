@@ -32,6 +32,8 @@ module LoadData
 
     json_data = File.read('data/rental.json')
     @rentals = JSON.parse(json_data).map do |rental_data|
+      rental_data['book'] = JSON.parse(rental_data['book']) # Parse the JSON-encoded 'book' field
+      rental_data['person'] = JSON.parse(rental_data['person']) # Parse the JSON-encoded 'person' field
       Rental.from_json(rental_data, @books, @people)
     end
   end

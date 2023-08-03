@@ -1,4 +1,3 @@
-# The Rental class represents a rental transaction of a book to a person on a specific date.
 class Rental
   # Getter and Setter for the date, book, and person attributes of the rental.
   attr_accessor :date, :book, :person
@@ -16,28 +15,19 @@ class Rental
   def to_json(*args)
     {
       'date' => @date,
-      'book' => {
-        'title' => @book.title,
-        'author' => @book.author
-      },
-      'person' => {
-        'type' => @person.class.name,
-        'id' => @person.id,
-        'age' => @person.age,
-        'name' => @person.name,
-        'parent_permission' => @person.parent_permission
-      }
+      'book' => @book.to_json,
+      'person' => @person.to_json
     }.to_json(*args)
   end
 
   def self.from_json(json_data, books, people)
-    rental_data = JSON.parse(json_data)
-
-    # Access the keys directly from the rental_data hash
-    book = find_book_by_title(rental_data['book']['title'], books)
-    person = find_person_by_id(rental_data['person']['id'], people)
-
-    Rental.new(rental_data['date'], book, person)
+    rental_data = json_data
+    date = rental_data['date']
+    book_data = rental_data['book']
+    person_data = rental_data['person']
+    book = find_book_by_title(book_data['title'], books)
+    person = find_person_by_id(person_data['id'], people)
+    Rental.new(date, book, person)
   end
 
   def load_rentals
@@ -45,10 +35,8 @@ class Rental
 
     json_data = File.read('data/rental.json')
     parsed_data = JSON.parse(json_data)
-
     # Ensure parsed_data is an array before processing
     parsed_data = [] unless parsed_data.is_a?(Array)
-
     @rentals = parsed_data.map do |rental_data|
       Rental.from_json(rental_data, @books, @people)
     end

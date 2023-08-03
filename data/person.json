@@ -1,4 +1,7 @@
 [
   "{\"type\":\"Student\",\"id\":112,\"age\":55,\"name\":\"ttyfyt\",\"parent_permission\":false,\"classroom\":\"byg\"}",
-  "{\"type\":\"Teacher\",\"id\":388,\"age\":23,\"name\":\"Mahamadou\",\"specialization\":\"Maths\"}"
+  "{\"type\":\"Teacher\",\"id\":388,\"age\":23,\"name\":\"Mahamadou\",\"specialization\":\"Maths\"}",
+  "{\"type\":\"Teacher\",\"id\":681,\"age\":23,\"name\":\"Nouridine\",\"specialization\":\"Computer\"}",
+  "{\"type\":\"Student\",\"id\":303,\"age\":29,\"name\":\"yacos\",\"parent_permission\":true,\"classroom\":\"A1\"}",
+  "{\"type\":\"Teacher\",\"id\":925,\"age\":30,\"name\":\"Papson\",\"specialization\":\"Electronics\"}"
 ]
