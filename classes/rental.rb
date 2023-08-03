@@ -1,4 +1,3 @@
-# The Rental class represents a rental transaction of a book to a person on a specific date.
 class Rental
   # Getter and Setter for the date, book, and person attributes of the rental.
   attr_accessor :date, :book, :person
@@ -12,6 +11,7 @@ class Rental
     @person = person
     person.rentals << self
   end
+
   def to_json(*args)
     {
       'date' => @date,
@@ -25,11 +25,8 @@ class Rental
     date = rental_data['date']
     book_data = rental_data['book']
     person_data = rental_data['person']
-    
-
-      book = find_book_by_title(book_data['title'], books)
-      person = find_person_by_id(person_data['id'], people)
-
+    book = find_book_by_title(book_data['title'], books)
+    person = find_person_by_id(person_data['id'], people)
     Rental.new(date, book, person)
   end
 
@@ -38,10 +35,8 @@ class Rental
 
     json_data = File.read('data/rental.json')
     parsed_data = JSON.parse(json_data)
-
     # Ensure parsed_data is an array before processing
     parsed_data = [] unless parsed_data.is_a?(Array)
-
     @rentals = parsed_data.map do |rental_data|
       Rental.from_json(rental_data, @books, @people)
     end
