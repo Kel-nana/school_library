@@ -6,7 +6,7 @@ describe Student do
   let(:name) { 'John Doe' }
   let(:parent_permission) { true }
   let(:classroom) { 'Science Class' }
-  let(:student) { Student.new(age, classroom, name, parent_permission:) }
+  let(:student) { Student.new(age, classroom, name, parent_permission: parent_permission) }
 
   describe '#initialize' do
     it 'sets the age, name, parent_permission, and rentals' do
