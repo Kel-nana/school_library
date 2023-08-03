@@ -6,7 +6,7 @@ class Student < Person
   # Constructor for the 'Student' class, taking four parameters: 'age', 'classroom', 'name', and 'parent_permission'.
   def initialize(age, classroom, name, parent_permission: true)
     # Call the 'initialize' method of the superclass 'Person' using the 'super' keyword
-    super(age, name, parent_permission: parent_permission)
+    super(age, name, parent_permission:)
 
     # Assign the 'classroom' parameter to an instance variable '@classroom'.
     @classroom = classroom

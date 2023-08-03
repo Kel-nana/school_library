@@ -5,7 +5,7 @@ describe Person do
   let(:age) { 20 }
   let(:name) { 'John Doe' }
   let(:parent_permission) { true }
-  let(:person) { Person.new(age, name, parent_permission: parent_permission) }
+  let(:person) { Person.new(age, name, parent_permission:) }
   describe '#initialize' do
     it 'sets the age, name, parent_permission, and rentals' do
       expect(person.age).to eq(age)
