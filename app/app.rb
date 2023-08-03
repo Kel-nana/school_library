@@ -64,7 +64,7 @@ class App
     name = get_user_input('Name: ', :string)
     parent_permission = get_user_input('Has parent permission? [Y/N]: ', :boolean)
     classroom = get_user_input('Classroom: ', :string)
-    student = Student.new(age, classroom, name, parent_permission: parent_permission)
+    student = Student.new(age, classroom, name, parent_permission:)
     puts 'Person created successfully'
     @people << student
   end

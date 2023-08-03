@@ -1,3 +1,4 @@
+require_relative 'person'
 # Define a new class 'Teacher' that inherits from the 'Person' class.
 class Teacher < Person
   attr_accessor :specialization, :id # Add ':id' to make it accessible and settable.
@@ -6,7 +7,7 @@ class Teacher < Person
   def initialize(age, specialization, name = 'Unknown', parent_permission: true)
     # Call the 'initialize' method of the superclass 'Person' using the 'super' keyword.
 
-    super(age, name, parent_permission: parent_permission)
+    super(age, name, parent_permission:)
 
     # Assign the 'specialization' parameter to an instance variable '@specialization'.
     @specialization = specialization
