@@ -1,7 +1,7 @@
 require 'json'
 require 'rspec'
 require_relative '../../classes/person'
-require_relative '../../classes/book.rb'
+require_relative '../../classes/book'
 describe Person do
   let(:age) { 20 }
   let(:name) { 'John Doe' }
@@ -54,7 +54,7 @@ describe Person do
 
   describe 'add_rental' do
     it 'Add rentals in the person rentals array' do
-      book = Book.new("Fancy book", "Nice author")
+      book = Book.new('Fancy book', 'Nice author')
       person.add_rental('22/09/2023', book)
       expect(person.rentals.length).to eq(2)
     end

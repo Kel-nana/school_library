@@ -1,7 +1,7 @@
 require 'json'
 require 'rspec'
 require_relative '../../classes/book'
-require_relative '../../classes/teacher.rb'
+require_relative '../../classes/teacher'
 describe Book do
   let(:title) { 'Atomic Habit' }
   let(:author) { 'Kel-nana' }
@@ -40,7 +40,7 @@ describe Book do
 
   describe 'add_rental' do
     it 'Add rentals in the book rentals array' do
-      teacher = Teacher.new(24, "Math")
+      teacher = Teacher.new(24, 'Math')
       book.add_rental('22/09/2023', teacher)
       expect(book.rentals.length).to eq(1)
     end
